@@ -18,7 +18,7 @@ Project ini dibuat untuk mempermudah pengelolaan data peserta secara terstruktur
 
 ## 🧱 Teknologi yang Digunakan
 
-* Frontend: HTML, CSS, JavaScript
+* Frontend: CSS, JavaScript
 * Backend: Node.js 
 * Database: PostgreSQL
 * Tools: Git, GitHub
