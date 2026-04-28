@@ -62,6 +62,12 @@ export default function PesertaForm({ initialData = null, isEdit = false }) {
       if (initialData.foto) {
         setFotoPreview(initialData.foto);
       }
+      if (initialData.id_provinsi) {
+        setSelectedProvinsi(initialData.id_provinsi);
+        getKabkoByProvinsi(initialData.id_provinsi)
+          .then((data) => setKabko(data))
+          .catch((err) => alert(err.message));
+      }
     }
   }, [initialData]);
 
@@ -218,7 +224,7 @@ export default function PesertaForm({ initialData = null, isEdit = false }) {
             <div className="mt-3">
               <span className="text-xs text-slate-500 block mb-1">Preview:</span>
               <img 
-                src={fotoPreview.startsWith('blob:') || fotoPreview.startsWith('http') ? fotoPreview : `http://localhost:5000/uploads/${fotoPreview}`} 
+                src={fotoPreview.startsWith('blob:') || fotoPreview.startsWith('http') ? fotoPreview : `http://localhost:3000/uploads/${fotoPreview}`} 
                 alt="Preview Foto" 
                 className="h-32 w-32 object-cover rounded-xl border border-slate-200" 
                 onError={(e) => { e.target.style.display = 'none'; }}
@@ -252,12 +258,21 @@ export default function PesertaForm({ initialData = null, isEdit = false }) {
         </div>
       </div>
 
-      <button
-        type="submit"
-        className="rounded-xl bg-slate-900 px-5 py-2.5 font-medium text-white hover:bg-slate-700"
-      >
-        {isEdit ? 'Update' : 'Simpan'}
-      </button>
+      <div className="flex gap-3 mt-4">
+        <button
+          type="button"
+          onClick={() => router.back()}
+          className="rounded-xl bg-slate-100 px-5 py-2.5 font-medium text-slate-700 hover:bg-slate-200"
+        >
+          Kembali
+        </button>
+        <button
+          type="submit"
+          className="rounded-xl bg-slate-900 px-5 py-2.5 font-medium text-white hover:bg-slate-700"
+        >
+          {isEdit ? 'Update' : 'Simpan'}
+        </button>
+      </div>
     </form>
   );
 }

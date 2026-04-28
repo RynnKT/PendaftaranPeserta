@@ -40,11 +40,17 @@ export default function PesertaTable({ data }) {
               <td className="px-4 py-3">{item.id}</td>
               <td className="px-4 py-3 font-medium">{item.nama}</td>
               <td className="px-4 py-3">{item.tempatlahir}</td>
-              <td className="px-4 py-3">{item.tanggallahir}</td>
+              <td className="px-4 py-3">{item.tanggallahir ? new Date(item.tanggallahir).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' }) : '-'}</td>
               <td className="px-4 py-3">{item.nama_kabko}</td>
               <td className="px-4 py-3">{item.nama_provinsi}</td>
               <td className="px-4 py-3">
                 <div className="flex gap-2">
+                  <Link
+                    href={`/peserta/detail/${item.id}`}
+                    className="rounded-lg bg-sky-500 px-3 py-1.5 text-white hover:bg-sky-600"
+                  >
+                    Detail
+                  </Link>
                   <Link
                     href={`/peserta/edit/${item.id}`}
                     className="rounded-lg bg-amber-500 px-3 py-1.5 text-white hover:bg-amber-600"

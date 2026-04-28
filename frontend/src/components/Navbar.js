@@ -4,7 +4,7 @@ export default function Navbar() {
   return (
     <nav className="border-b bg-white shadow-sm">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
-        <h1 className="text-lg font-bold text-slate-800">Frontend Peserta</h1>
+        <h1 className="text-lg font-bold text-slate-800">Registrasi App</h1>
         <div className="flex gap-3">
           <Link
             href="/"
@@ -19,13 +19,25 @@ export default function Navbar() {
             Peserta
           </Link>
           <Link
+            href="/peserta/provinsi"
+            className="rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100"
+          >
+            Provinsi
+          </Link>
+          <Link
+            href="/peserta/kabkota"
+            className="rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100"
+          >
+            Kabupaten/Kota
+          </Link>
+          <Link
             href="/peserta/tambah"
             className="rounded-lg bg-slate-900 px-3 py-2 text-sm font-medium text-white hover:bg-slate-700"
           >
-            Tambah Peserta
+            + Tambah Peserta
           </Link>
         </div>
       </div>
     </nav>
   );
-}
+}

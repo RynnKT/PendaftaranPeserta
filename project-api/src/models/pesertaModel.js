@@ -13,6 +13,7 @@ const getAllPeserta = async () => {
       ps.hobi,
       ps.foto,
       ps.idkabko,
+      k.id_provinsi,
       k.nama AS nama_kabko,
       pr.nama AS nama_provinsi
     FROM peserta ps
@@ -37,6 +38,7 @@ const getPesertaById = async (id) => {
       ps.hobi,
       ps.foto,
       ps.idkabko,
+      k.id_provinsi,
       k.nama AS nama_kabko,
       pr.nama AS nama_provinsi
     FROM peserta ps
