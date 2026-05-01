@@ -1,60 +1,95 @@
 # 📋 Pendaftaran Peserta
 
-Aplikasi berbasis web untuk mengelola proses pendaftaran peserta secara online.
-Project ini dibuat untuk mempermudah pengelolaan data peserta secara terstruktur dan efisien.
+Aplikasi fullstack untuk mengelola proses pendaftaran peserta secara online.
+Project ini mencakup **backend API, frontend web, dan mobile app (Expo)** dalam satu repository.
 
 ---
 
 ## 🚀 Fitur Utama
 
-* ✏️ Form pendaftaran peserta
+* ✏️ Form pendaftaran peserta (Web & Mobile)
 * 📊 Menampilkan data peserta
 * 🔍 Detail peserta
-* 🛠️ Edit data
+* 🛠️ Edit data peserta
 * ❌ Hapus data
-* 📁 Penyimpanan ke database
+* 📷 Upload foto peserta
+* 🌐 REST API backend terintegrasi
 
 ---
 
 ## 🧱 Teknologi yang Digunakan
 
-* Frontend: CSS, JavaScript
-* Backend: Node.js 
-* Database: PostgreSQL
-* Tools: Git, GitHub
+**Frontend Web**
+
+* HTML, CSS, JavaScript
+
+**Mobile App**
+
+* React Native (Expo)
+
+**Backend**
+
+* Node.js (Express)
+
+**Database**
+
+* PostgreSQL
+
+**Tools**
+
+* Git & GitHub
+
+---
+
+## 📁 Struktur Project
+
+```
+PendaftaranPeserta/
+├── frontend/          → Web app
+├── frontend-mobile/   → Mobile app (Expo)
+├── project-api/       → Backend API
+└── README.md
+```
 
 ---
 
 ## ⚙️ Cara Menjalankan Project
 
-1. Clone repository:
+### 1️⃣ Clone repository
 
-```bash
-git clone https://github.com/RynnKT/PendaftaranPeserta.git
 ```
-
-2. Masuk ke folder project:
-
-```bash
+git clone https://github.com/RynnKT/PendaftaranPeserta.git
 cd PendaftaranPeserta
 ```
 
-3. Install dependencies:
+---
 
-```bash
-npm install
+### 2️⃣ Jalankan Backend
+
 ```
-
-4. Jalankan server:
-
-```bash
+cd project-api
+npm install
 npm start
 ```
 
-5. Buka di browser:
+---
+
+### 3️⃣ Jalankan Frontend Web
 
 ```
-http://localhost:3000
+cd frontend
+npm install
+npm start
+```
+
+---
+
+### 4️⃣ Jalankan Mobile App (Expo)
+
+```
+cd frontend-mobile
+npm install
+npx expo start
 ```
 
 ---
@@ -79,16 +114,21 @@ http://localhost:3000
 
 ---
 
-### Relasi
+## 🔗 Contoh Endpoint API
 
-* `idkabko` → mengacu ke tabel **kabko**
-* Data kabupaten/kota terhubung dengan **provinsi**
+| Method | Endpoint     | Deskripsi        |
+| ------ | ------------ | ---------------- |
+| GET    | /peserta     | Ambil semua data |
+| GET    | /peserta/:id | Detail peserta   |
+| POST   | /peserta     | Tambah peserta   |
+| PUT    | /peserta/:id | Update peserta   |
+| DELETE | /peserta/:id | Hapus peserta    |
 
 ---
 
-### Contoh Response API
+## 📦 Contoh Response API
 
-```json
+```
 {
   "id": 18,
   "nama": "eca",
@@ -105,12 +145,21 @@ http://localhost:3000
 }
 ```
 
-## 📌 Tujuan Project
+---
 
-Project ini dibuat untuk:
+## 🎯 Tujuan Project
 
+* Implementasi CRUD dengan REST API
+* Integrasi frontend, backend, dan mobile
+* Latihan fullstack development
 * Tugas kuliah
-* Latihan CRUD
-* Implementasi REST API & database
+
+---
+
+## ⚠️ Catatan
+
+* Pastikan PostgreSQL sudah berjalan
+* Konfigurasi database ada di folder `project-api`
+* Gunakan `.env` untuk konfigurasi koneksi database
 
 ---
